@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+		  <!-- <localRepository>C:/Users/Gui/.m2/repository</localRepository>-->
+		  <localRepository>F:/nexus</localRepository>
+
+<mirrors>
+
+	<!-- <mirror>
+      <id>nexus</id>
+      <mirrorOf>*</mirrorOf>
+      <url>C:/Users/Gui/.m2/repository</url>
+    </mirror>
+	-->
+    <!-- 中央仓库在中国的镜像，当然这里只是举例，你的镜像完全可以是你的私服 -->
+    <!-- <mirror>
+      <id>maven.net.cn</id>
+      <mirrorOf>central</mirrorOf>
+      <name>one of the central mirrors in China</name>
+      <url>http://maven.net.cn/content/groups/public/</url>
+    </mirror> -->
+
+	<!-- <mirror>
+      <id>CN</id>
+      <name>OSChina Central</name>                                                                                                                
+      <url>http://maven.oschina.net/content/groups/public/</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+	-->
+	
+	<mirror>
+		<id>nexus</id>
+		<mirrorOf>*</mirrorOf>
+		<url>http://192.168.23.132:8081/nexus/content/groups/public/</url>
+	</mirror>
+	
+</mirrors>
+
+	<profiles>
+		<profile>
+			<id>nexusRepos</id>
+			<repositories>
+				<repository>
+					<id>nexus</id>
+					<url>http://192.168.23.132:8081/nexus/content/groups/public/</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled></snapshots>
+				</repository>
+			</repositories>
+				
+			<!--	<pluginRepositories>
+				<pluginRepository>
+					<id>central</id>
+					<url>http://central</url>
+					<releases><enabled>true</enabled></releases>
+					<snapshots><enabled>true</enabled></snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+			-->
+		</profile>
+	</profiles>
+
+	<activeProfiles>
+		<activeProfile>nexusRepos</activeProfile>
+	</activeProfiles>
+</settings>

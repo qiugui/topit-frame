@@ -1,0 +1,1 @@
+testing测试说明   spring  会对事物进行自动会滚  即使执行正确  建议测试的时候加上@Rollback（false）
