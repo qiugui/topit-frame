@@ -69,4 +69,15 @@
 	<activeProfiles>
 		<activeProfile>nexusRepos</activeProfile>
 	</activeProfiles>
+
+	<server>
+		<id>jlit-frame-release</id>
+		<username>deployment</username>
+		<password>deployment123</password>
+	</server>
+	<server>
+		<id>jlit-frame-snapshot</id>
+		<username>deployment</username>
+		<password>deployment123</password>
+	</server>
 </settings>
